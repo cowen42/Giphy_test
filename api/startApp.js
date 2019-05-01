@@ -29,7 +29,9 @@ function start(app, port) {
         const favId = favourites.findIndex(item => {
             return item.id === req.query.id;
         });
-        if (favId) {
+        // this is needed (rather than "if (favId)" since that would mean attempting to remove
+        // item at index 0 would fail (meaning backend favourites would be incorrect)
+        if (favId >= 0) {
           favourites.splice(favId, 1)
         }
         res.end();

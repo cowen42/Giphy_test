@@ -9,6 +9,7 @@ export default function(giphyService) {
     let lastCallToApi = {};
     main.offset = 0;
     main.results = [];
+    main.favourites = []; // added this for initialisation, but not strictly neccessary
 
     function mapResults(results) {
 
@@ -63,7 +64,14 @@ export default function(giphyService) {
     }
 
     main.removeFromFavourites = function(item) {
-        giphyService.removeFromFavourites(item);
+        giphyService.removeFromFavourites(item).then(
+            function (success) {
+                //main.getFavourites(); // could do this but not the best way
+                main.favourites = _.filter(main.favourites, function (favourite) { return favourite.id !== item.id });
+            },
+            function (fail) {
+                console.log(fail);
+            });
     }
 
     main.getFavourites = function() {
