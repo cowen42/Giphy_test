@@ -14,10 +14,10 @@
 
 /* eslint-disable no-unused-vars */
 
-import fetch from 'whatwg-fetch';
-import bootstrap from 'bootstrap';
-import jQuery from 'jquery';
-import angular from 'angular';
-import angularRoute from 'angular-route';
-import angularResource from 'angular-resource';
-import lodash from 'lodash';
+import fetch from "whatwg-fetch";
+import bootstrap from "bootstrap";
+import jQuery from "jquery";
+import angular from "angular";
+import angularRoute from "angular-route";
+import angularResource from "angular-resource";
+import lodash from "lodash";
